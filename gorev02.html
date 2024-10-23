@@ -1,0 +1,47 @@
+<!--  bir buton koy ve buton kaybolsun -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Görev 2</title>
+</head>
+
+<body>
+
+    <!-- Yöntem 1 : buton var ama gizleme-->
+    <button id="btn1" onclick="document.getElementById('btn1').style.display='none'">Beni gizle</button>
+
+    <!-- Yöntem 2 : -->
+    <button id="btn2"> beni gizleme tümden yok et</button>
+    <script>
+        const btn2 = document.querySelector("#btn2");
+        btn2.addEventListener("click", function () {
+            btn2.remove(); // DOM dan tümüyle kaldır
+        });
+    </script>
+
+
+    <!-- Yöntem3 istek: addEventListener yerine onclick property'sini kullan ve bu property'ye atayacağın fonksiyonu --arrow function-- olarak tanımla  -->
+    <button id="btn3"> beni yok et</button>
+    <script>
+        const btn3 = document.getElementById("btn3");
+        btn3.onclick = () => btn3.remove();
+    </script>
+
+    <!-- Yöntem 4 event parametresi ile -->
+    <button id="btn4"> Butt11</button>
+    <script>
+        document.getElementById("btn4").onclick = function (event) {
+            event.target.remove()
+        };
+    </script>
+
+    <!-- Yöntem 5 event parametresi ile -->
+    <button id="btn5"> Yok edelim</button>
+    <script>
+        document.getElementById("btn5").onclick = (e) => e.target.remove();
+    </script>
+</body>
+
+</html>
