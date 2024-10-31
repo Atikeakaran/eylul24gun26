@@ -39,8 +39,9 @@
         </ul>
         </p>
         <form id="frmRenk">
-            <input id="txtRenk" type="text" placeholder="Hangi renk" required>
-            <button id="btn" class="btn" onclick="renkAl()">
+            <input type="text" id="txtRenk" placeholder="Hangi renk" required>
+            <!-- <button type="submit" onclick="renkAl()"> -->
+            <button type="submit">
                 Göster
             </button>
         </form>
@@ -50,16 +51,21 @@
     <script>
         const box = document.getElementById("box");
         const txt = document.getElementById("txtRenk");
-        //const frmRenk = document.getElementById("frmRenk");
-        //const btn = document.getElementById("btn");
-
+        const frmRenk = document.getElementById("frmRenk");
+        /*
         function renkAl(e) {
             e.preventDefault();
             box.style.backgroundColor = txt.value;
-        }
-        //renkAl();
+        } 
         frmRenk.addEventListener("submit", renkAl);
+        */
+        frmRenk.onsubmit = function (e) {
+            e.preventDefault();
+            box.style.backgroundColor = txt.value;
+        }
+
 
     </script>
 </body>
+
 </html>
