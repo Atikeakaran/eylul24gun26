@@ -1,0 +1,50 @@
+<!-- Ödev 1 : js ile 100 adet buton koy ve her birinde 0 yazsın
+hangisine tıklanırsa onun değeri 1 artsın 
+
+css ile bu 100 butonu 10x10 luk grid olarak şekilde göster-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odev01</title>
+    <style>
+        div {
+            margin: 5%;
+            
+        }
+        h1{
+            margin: 5%;
+        }
+
+        .btns{
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-template-rows:  repeat(10, 30px);
+            gap: 3px;
+
+        }
+    </style>
+</head>
+<body><div >
+    
+        <h1>Ödev 1</h1>
+        <div id="divb" class="btns"> </div>
+</div>
+
+<script>
+    const abc = document.getElementById("divb");
+
+    for(let i=1; i <= 100; i++){
+        const btn = document.createElement("button");
+        btn.textContent=0;
+        abc.appendChild(btn);
+
+        btn.onclick =function(){
+            this.textContent = Number(this.textContent)+1;
+        }
+    }
+
+</script>
+
+</body>
+</html>

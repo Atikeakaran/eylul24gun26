@@ -1,0 +1,36 @@
+<!-- ÖDEV 2:
+Bir kare yapın. Bu kareye tıklayınca sayfa üzerinde rastgele bir yere
+gitsin. (ipuçları: css'teki mutlak pozisyonlamadan yararlanılabilir.)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Odev 2</title>
+    <style>
+        .box {
+            border: 10px solid red;
+            padding: 10px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn" class="box" onclick="mode()">TIKLA</button>
+    <script>
+        
+        const btn = document.getElementById("btn");
+        function mode() {
+            btn.style.left = Math.floor(Math.random() * 1000) + "px";
+            btn.style.top = Math.floor(Math.random() * 1000) + "px";
+            btn.style.backgroundColor = "black";
+            btn.style.color = "white";
+        }
+    </script>
+</body>
+
+</html>

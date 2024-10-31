@@ -1,0 +1,63 @@
+<!-- GÖREV 3: Bir metin kutusu koyun. Kullanıcı oraya renk kodu girince
+ sayfanın arkaplan rengi o renk olsun. Örnek inputlar:
+ red, orange, #fafafa, #e3c, rgb(253, 33, 128), vs.. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 1.5rem;
+        }
+
+        .kutu {
+            width: 15rem;
+            height: 10rem;
+            background-color: black;
+            margin: 5px;
+        }
+
+        #frmRenk {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p> Hangi renk? <br>
+        <ul style="font-weight: bold;">
+            <li>#fafafa, #e3c </li>
+            <li>rgb(253, 33, 128)</li>
+            <li>red, blue</li>
+        </ul>
+        </p>
+        <form id="frmRenk">
+            <input id="txtRenk" type="text" placeholder="Hangi renk" required>
+            <button id="btn" class="btn" onclick="renkAl()">
+                Göster
+            </button>
+        </form>
+        <div id="box" class="kutu"></div>
+    </div>
+
+    <script>
+        const box = document.getElementById("box");
+        const txt = document.getElementById("txtRenk");
+
+        function renkAl(e) {
+            event.preventDefault();
+            box.style.backgroundColor = txt.value;
+        }
+        frmRenk.addEventListener("submit", renkAl);
+
+    </script>
+</body>
+
+</html>
