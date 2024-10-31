@@ -50,14 +50,16 @@
     <script>
         const box = document.getElementById("box");
         const txt = document.getElementById("txtRenk");
+        //const frmRenk = document.getElementById("frmRenk");
+        //const btn = document.getElementById("btn");
 
         function renkAl(e) {
-            event.preventDefault();
+            e.preventDefault();
             box.style.backgroundColor = txt.value;
         }
+        //renkAl();
         frmRenk.addEventListener("submit", renkAl);
 
     </script>
 </body>
-
 </html>
